@@ -1,0 +1,2 @@
+flask
+firebase_admin
