@@ -1,7 +1,7 @@
 steps:
   # build & push the container image
 - name: "gcr.io/$PROJECT_ID/executor:latest"
-  args: ["--cache=true", "--cache-ttl=48h", "--destination=gcr.io/fullstackgcp/todo:latest"]
+  args: ["--cache=true", "--cache-ttl=48h", "--destination=gcr.io/fullstackgcp/flask:latest"]
   # Deploy container image to Cloud Run
 - name: "gcr.io/cloud-builders/gcloud"
-  args: ['beta', 'run', 'deploy', 'todo', '--image', 'gcr.io/fullstackgcp/todo:latest', '--region', 'us-central1', '--allow-unauthenticated', '--platform', 'managed']
+  args: ['beta', 'run', 'deploy', 'flask', '--image', 'gcr.io/fullstackgcp/flask:latest', '--region', 'us-central1', '--allow-unauthenticated', '--platform', 'managed']
