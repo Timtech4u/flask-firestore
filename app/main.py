@@ -12,6 +12,12 @@ default_app = initialize_app(cred)
 db = firestore.client()
 todo_ref = db.collection('todos')
 
+@app.route('/', methods=['GET'])
+def index():
+    """
+        Welcome
+    """
+    return "Hello"
 
 @app.route('/add', methods=['POST'])
 def create():
